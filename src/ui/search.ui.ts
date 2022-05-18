@@ -20,6 +20,7 @@ const search = async (isID = false) => {
       else
         pokeData = cache.getPokemonByName(query);
 
+      // update cache that over a week old...
       let update = false;
       if (pokeData) {
         const dayDiffs = dayjs().diff(pokeData.timestamps, 'day');

@@ -22,7 +22,6 @@ const cacheFilePath = path.join(__dirname, `/caches.txt`);
 const cacheFile = async () => {
   try {
     console.log('read cache...');
-    // await fsPromises.mkdir(cachePath);
     fileHandle = await fsPromises.open(cacheFilePath, 'r');
     console.log('cache found...');
     fileData = (await fileHandle.readFile({ encoding: 'utf-8' })).split(/\r?\n/);
